@@ -20,13 +20,10 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupSlider()
-        
+        setColor()
     }
-    
     
     @IBAction func redSliderAction() {
         redLabel.text = String(round(redSlider.value * 100) / 100)
@@ -42,34 +39,20 @@ class ViewController: UIViewController {
         blueLabel.text = String(round(blueSlider.value * 100) / 100)
         setColor()
     }
-    
-    //Я конечно понимаю, что дублирования кода быть не должно, но как это решить не знаю(((
+
     private func setupSlider() {
-        
         redSlider.minimumTrackTintColor = .red
-        redSlider.maximumTrackTintColor = .white
-        redSlider.minimumValue = 0
-        redSlider.maximumValue = 1
-        redSlider.value = 1
-        
         greenSlider.minimumTrackTintColor = .green
-        greenSlider.maximumTrackTintColor = .white
-        greenSlider.minimumValue = 0
-        greenSlider.maximumValue = 1
-        greenSlider.value = 1
-        
         blueSlider.minimumTrackTintColor = .blue
-        blueSlider.maximumTrackTintColor = .white
-        blueSlider.minimumValue = 0
-        blueSlider.maximumValue = 1
-        blueSlider.value = 1
     }
     
     func setColor() {
-        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
     }
-    
-    
-    
 }
 
