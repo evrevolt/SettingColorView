@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
-    @IBOutlet var colorView: UIView!
+    @IBOutlet var settingColorView: UIView!
     
     @IBOutlet var redLabel: UILabel!
     @IBOutlet var greenLabel: UILabel!
@@ -17,8 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
+
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSlider()
@@ -39,15 +40,20 @@ class ViewController: UIViewController {
         blueLabel.text = String(round(blueSlider.value * 100) / 100)
         setColor()
     }
-
+    
+    
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
     private func setupSlider() {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
     }
     
-    func setColor() {
-        colorView.backgroundColor = UIColor(
+    private func setColor() {
+        settingColorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
