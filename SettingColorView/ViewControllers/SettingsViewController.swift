@@ -14,16 +14,18 @@ class SettingsViewController: UIViewController {
     @IBOutlet var redLabel: UILabel!
     @IBOutlet var greenLabel: UILabel!
     @IBOutlet var blueLabel: UILabel!
+    
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
-
     
-
+    var colorView: ColorView!
+    var color: UIColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSlider()
-        setColor()
+        settingColorView.backgroundColor = color
     }
     
     @IBAction func redSliderAction() {
@@ -41,15 +43,19 @@ class SettingsViewController: UIViewController {
         setColor()
     }
     
-    
-    @IBAction func doneButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
-    
     private func setupSlider() {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
+
+        let (red, green, blue, _) = color.rgba
+        redSlider.value = Float(red)
+        greenSlider.value = Float(green)
+        blueSlider.value = Float(blue)
+        
+        redLabel.text = String(round(redSlider.value * 100) / 100)
+        greenLabel.text = String(round(greenSlider.value * 100) / 100)
+        blueLabel.text = String(round(blueSlider.value * 100) / 100)
     }
     
     private func setColor() {
@@ -57,8 +63,7 @@ class SettingsViewController: UIViewController {
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
+            alpha: 1)
     }
 }
 
