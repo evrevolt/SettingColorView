@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
     
     var colorView: ColorView!
     var color: UIColor!
+    var delegate: SettingsViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +44,27 @@ class SettingsViewController: UIViewController {
         setColor()
     }
     
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        delegate.setNewColor(for: CGFloat(redSlider.value),
+                             green: CGFloat(greenSlider.value),
+                             blue: CGFloat(blueSlider.value))
+        dismiss(animated: true)
+    }
+    
+    
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
     private func setupSlider() {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
 
-        let (red, green, blue, _) = color.rgba
-        redSlider.value = Float(red)
-        greenSlider.value = Float(green)
-        blueSlider.value = Float(blue)
+        redSlider.value = Float(color.rgba.red)
+        greenSlider.value = Float(color.rgba.green)
+        blueSlider.value = Float(color.rgba.blue)
         
         redLabel.text = String(round(redSlider.value * 100) / 100)
         greenLabel.text = String(round(greenSlider.value * 100) / 100)

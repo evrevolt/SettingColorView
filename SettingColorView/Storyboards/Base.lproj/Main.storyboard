@@ -147,8 +147,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Lzr-94-zH3">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rKc-yv-YTq"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="z5q-FJ-TPA"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rKc-yv-YTq">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" id="MXG-TX-t8L"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="z5q-FJ-TPA">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="BYZ-38-t0r" id="tnA-KO-dEQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="blueLabel" destination="eq8-RM-4Z0" id="Uwe-5Q-JyM"/>

@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol SettingsViewControllerDelegate {
+    ///Set new color in View
+    func setNewColor(for red: CGFloat, green: CGFloat, blue: CGFloat)
+}
+
 class ColorViewController: UIViewController {
     
     @IBOutlet var colorVIew: UIView!
@@ -20,7 +25,7 @@ class ColorViewController: UIViewController {
         
         //Получаем данные, какой цвет у нас задействован сейчас на СolorViewController. Передаем
         settingsVC.color = colorVIew.backgroundColor?.resolvedColor(with: self.traitCollection)
-
+        settingsVC.delegate = self
     }
 }
 
@@ -33,5 +38,12 @@ extension UIColor {
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
 
         return (red, green, blue, alpha)
+    }
+}
+
+// MARK: - SettingsViewControllerDelegate
+extension ColorViewController: SettingsViewControllerDelegate {
+    func setNewColor(for red: CGFloat, green: CGFloat, blue: CGFloat) {
+        colorVIew.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
     }
 }
