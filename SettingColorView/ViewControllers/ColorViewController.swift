@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SettingsViewControllerDelegate {
-    ///Set new color in View
+    //Set new color in View
     func setNewColor(for red: CGFloat, green: CGFloat, blue: CGFloat)
 }
 
