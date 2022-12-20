@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		540E3E53290824EC00F40459 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540E3E52290824EC00F40459 /* ColorViewController.swift */; };
-		540E3E592909223B00F40459 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540E3E582909223B00F40459 /* Models.swift */; };
 		54932DDC2901B74D001C6739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54932DDB2901B74D001C6739 /* AppDelegate.swift */; };
 		54932DDE2901B74D001C6739 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54932DDD2901B74D001C6739 /* SceneDelegate.swift */; };
 		54932DE02901B74D001C6739 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54932DDF2901B74D001C6739 /* SettingsViewController.swift */; };
@@ -19,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		540E3E52290824EC00F40459 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
-		540E3E582909223B00F40459 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		54932DD82901B74D001C6739 /* SettingColorView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingColorView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54932DDB2901B74D001C6739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54932DDD2901B74D001C6739 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,14 +66,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		540E3E572909222A00F40459 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				540E3E582909223B00F40459 /* Models.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		54932DCF2901B74D001C6739 = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +85,6 @@
 		54932DDA2901B74D001C6739 /* SettingColorView */ = {
 			isa = PBXGroup;
 			children = (
-				540E3E572909222A00F40459 /* Models */,
 				540E3E542909214D00F40459 /* ViewControllers */,
 				540E3E55290921F300F40459 /* SettingsFiles */,
 				540E3E562909221500F40459 /* Storyboards */,
@@ -180,7 +169,6 @@
 				54932DDC2901B74D001C6739 /* AppDelegate.swift in Sources */,
 				540E3E53290824EC00F40459 /* ColorViewController.swift in Sources */,
 				54932DDE2901B74D001C6739 /* SceneDelegate.swift in Sources */,
-				540E3E592909223B00F40459 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
